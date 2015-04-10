@@ -1,6 +1,8 @@
-# Xcode
+# XCode
+# ====
+
 .DS_Store
-build/
+build/*
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -9,10 +11,22 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
 xcuserdata
 profile
 *.moved-aside
 DerivedData
-.idea/
 
-/Build
+.xcodeproj/ !*.xcodeproj/project.pbxprojs
+
+# cocoapods
+pods
+Pods.xcconfig
+
+# Carthage
+Carthage
+
+
+# vendor/*
+*.bak

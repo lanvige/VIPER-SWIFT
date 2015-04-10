@@ -11,8 +11,8 @@ import Foundation
 class ListInteractor : NSObject, ListInteractorInput {
     var output : ListInteractorOutput?
     
-    let clock : Clock
-    let dataManager : ListDataManager
+    let clock: Clock
+    let dataManager: ListDataManager
     
     init(dataManager: ListDataManager, clock: Clock) {
         self.dataManager = dataManager
@@ -31,10 +31,10 @@ class ListInteractor : NSObject, ListInteractorInput {
         })
     }
     
-    func upcomingItemsFromToDoItems(todoItems: TodoItem[]) -> UpcomingItem[] {
+    func upcomingItemsFromToDoItems(todoItems: [TodoItem]) -> [UpcomingItem] {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         
-        var upcomingItems : UpcomingItem[] = []
+        var upcomingItems: [UpcomingItem] = []
         
         for todoItem in todoItems {
             var dateRelation = calendar.nearTermRelationForDate(todoItem.dueDate, relativeToToday: clock.today())
